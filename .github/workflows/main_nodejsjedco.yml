@@ -54,14 +54,3 @@ jobs:
           slot-name: 'Production'
           package: .
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_93217B6FAAED4D63AF1B2149F2A72CCC }}
-
-  run-app:
-    runs-on: windows-latest
-    needs: deploy
-
-    steps:
-      - name: 'Run the app'
-        run: |
-          cd ${{ env.DEPLOYMENT_TARGET }}
-          npm install
-          npm start
