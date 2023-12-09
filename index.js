@@ -3,7 +3,7 @@ const express = require('express')
 const app = express()
 
 app.use(express.static('public'))
-app.use("/getter",(req, res)=>{
+app.get("/getter",(req, res)=>{
     return "<p>hello world</p>"
 })
 let port = process.env.PORT || 8080
